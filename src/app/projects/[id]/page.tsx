@@ -62,13 +62,14 @@ const projects = [
     image: "/bcwholesale-banner.png",
     icon: "https://ext.same-assets.com/2600242455/548389142.svg",
     full_description:
-      "Brand Central is a B2B e-commerce platform based in NY which specializes in wholesale product distribution to pharmacies, retail stores, and supermarkets. This application was developed to offers a user-friendly interface for browsing and purchasing a wide range of products on the go. It includes features such as secure payment processing, order tracking, and a comprehensive product catalog.",
+      "Brand Central is a B2B e-commerce platform based in NY which specializes in wholesale product distribution to pharmacies, retail stores, and supermarkets. This application was developed to offers a user-friendly interface for browsing and purchasing a wide range of products on the go. It includes features such as secure payment processing, order placement and tracking, and product catalog.",
     technologies: [
-      "Vue.js",
-      "Nuxt.js",
-      "Firebase",
-      "Google Maps API",
-      "Calendar API",
+      "React Native",
+      "Expo",
+      "RTK Query",
+      "Navtivewind",
+      "Redux",
+      "React Hook Form",
     ],
     links: {
       live: "https://apps.apple.com/us/app/bc-wholesale/id6499428765?platform=iphone",
@@ -83,18 +84,19 @@ const projects = [
     image: "/bcw-banner.png",
     icon: "https://ext.same-assets.com/2600242455/260646423.svg",
     full_description:
-      "FoodieFinder is a restaurant discovery platform designed to help users find the perfect dining spot. The app features real-time search functionality, allowing users to filter restaurants by cuisine, location, price range, and more. Users can read and submit reviews, view high-quality food photos, and make reservations directly through the platform.",
+      "Brand Central Wholesale is a mobile application designed for the company's sales representatives. It provides the ease of order placement for customers being serviced by each sales rep. The app is built with React Native and Expo, ensuring a smooth user experience on both iOS and Android devices.",
     technologies: [
       "React Native",
-      "GraphQL",
-      "Apollo Client",
-      "Node.js",
-      "PostgreSQL",
-      "Google Places API",
+      "Expo",
+      "RTK Query",
+      "Redux",
+      "Nativewind",
+      "React Navigation",
+      "React Hook Form",
     ],
     links: {
-      live: "https://foodiefinder.example.com",
-      github: "https://github.com/lucadcz/foodiefinder",
+      live: null,
+      github: null,
     },
   },
 ];
@@ -196,13 +198,15 @@ export default async function ProjectPage({
                     asChild
                     className="w-full bg-primary text-white font-medium hover:bg-primary/90"
                   >
-                    <a
-                      href={project.links.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      View Live Site
-                    </a>
+                    {project.links.live && (
+                      <a
+                        href={project.links.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        View Live Site
+                      </a>
+                    )}
                   </Button>
                   {project.links.github && (
                     <Button
